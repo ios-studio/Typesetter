@@ -155,7 +155,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 536F38261C5D11E800948324 /* Build configuration list for PBXNativeTarget "Typesetter" */;
 			buildPhases = (
-				536F38471C5D136200948324 /* ShellScript */,
 				536F380D1C5D11E800948324 /* Sources */,
 				536F380E1C5D11E800948324 /* Frameworks */,
 				536F380F1C5D11E800948324 /* Headers */,
@@ -174,7 +173,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 536F38291C5D11E800948324 /* Build configuration list for PBXNativeTarget "TypesetterTests" */;
 			buildPhases = (
-				536F38481C5D137B00948324 /* ShellScript */,
 				536F38181C5D11E800948324 /* Sources */,
 				536F38191C5D11E800948324 /* Frameworks */,
 				536F381A1C5D11E800948324 /* Resources */,
@@ -246,37 +244,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		536F38471C5D136200948324 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftCSV.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		536F38481C5D137B00948324 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		536F380D1C5D11E800948324 /* Sources */ = {
