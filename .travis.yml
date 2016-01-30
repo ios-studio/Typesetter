@@ -2,11 +2,20 @@ language: swift
 osx_image: xcode7.2
 xcode_project: Typesetter.xcodeproj
 
-before_install:
-  - carthage update --platform iOS --no-use-binaries
+env:
+  matrix:
+      - DESTINATION="OS=9.1,name=iPad 2"
+      - DESTINATION="OS=9.2,name=iPad Air"
+      - DESTINATION="OS=9.1,name=iPhone 5"
+      - DESTINATION="OS=9.2,name=iPhone 6s"
+      - DESTINATION="OS=8.4,name=iPhone 6"
+      - DESTINATION="OS=8.4,name=iPad Air"
 
 script:
-  - xcodebuild test -workspace Typesetter.xcworkspace -scheme Typesetter -sdk iphonesimulator
+  - bin/test
 
 notifications:
     email: true
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
