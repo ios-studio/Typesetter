@@ -1,2 +1,65 @@
 # Typesetter
-A thin wrapper around Dynamic Type
+Dynamic type is great, but to adjust the typographic setup to work with the font & content sizes available can be daunting.
+This library puts you back in control by reading the sizes from a CSV file which can easily be generated from Google Docs or other common table editors.
+
+## Installation
+
+#### Via [Carthage](https://github.com/Carthage/Carthage):
+Add the following your Cartfile:
+
+```Swift
+github "ios-studio/Typesetter" ~> 0.1.0
+```
+
+#### Via [Cocoapods](https://cocoapods.org/):
+Add the following your Podfile:
+
+```ruby
+pod "Typesetter", "~> 0.1.0"
+```
+
+## Default Setup
+Typesetter will look for a file named `FontSizes.csv` in your current target. The contents of the file should look like [this](https://github.com/ios-studio/Typesetter/blob/master/TypesetterTests/FontSizes.csv). It is important to not delete any columns or rows, otherwise Typesetter will default to a standard font size for all the fonts.
+
+For the fonts you'd like to use in your project, define a class which conforms to the protocol `TypesetterFont`. The only requirement of that protocol is that the object responds to the property `name`, so for example it could look like:
+
+```Swift
+enum Font: String, TypesetterFont {
+    case Regular = "MyFont-Regular"
+    case Bold = "MyFont-Bold"
+
+    var name: String { return rawValue }
+}
+
+```
+
+Where `"MyFont-Regular"` is the name of the font you'd like to use.
+
+## Configuring
+Typesetter can be passed a `TypesetterConfiguration` object where you can specify another path to your font sizes file.
+
+## Using Typesetter
+
+Typically, all you will use is the `sizedFontFor` method, which you can use in two ways:
+
+#### Using the `TypesetterTextStyle` enum
+
+Remember the definition of `Font` from above? This is how to get a font sized according to your definitions and the users font size settings:
+
+```Swift
+let typesetter = Typesetter()
+let sizedFont = typesetter.sizedFontFor(.Body, font: Font.Bold)
+```
+
+#### Using a string
+
+This is a convenience method to be able to use Typesetter with `@IBDesignable` / `@IBInspectable`. Since `@IBInspectable` does not yet work with enum types, you can use the version of `sizedFontFor` without a type check like so:
+
+```Swift
+let typesetter = Typesetter()
+let sizedFont = typesetter.sizedFontFor("Body", font: Font.Bold)
+```
+
+## Contributions
+
+Yes please!
