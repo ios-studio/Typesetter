@@ -117,8 +117,8 @@
 		536F38201C5D11E800948324 /* TypesetterTests */ = {
 			isa = PBXGroup;
 			children = (
-				536F384D1C5D141700948324 /* TypesetterTests.swift */,
 				536F38401C5D131F00948324 /* Support */,
+				536F384D1C5D141700948324 /* TypesetterTests.swift */,
 				536F38381C5D131900948324 /* TypesetterTextStyleTests.swift */,
 				536F38391C5D131900948324 /* TypesetterTextStyleFontSizeMatrixLoaderTests.swift */,
 				536F383A1C5D131900948324 /* TypesetterFontSizeTests.swift */,

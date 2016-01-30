@@ -1,7 +1,7 @@
 import XCTest
 import Nimble
 
-@testable import Typesetter
+import Typesetter
 
 class TypesetterConfigurationTests: XCTestCase {
     

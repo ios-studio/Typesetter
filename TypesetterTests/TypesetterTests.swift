@@ -9,7 +9,7 @@
 import XCTest
 import Nimble
 
-@testable import Typesetter
+import Typesetter
 
 class TypesetterTests: XCTestCase {
     

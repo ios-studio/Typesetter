@@ -1,24 +1,24 @@
 import UIKit
 
 public struct TypesetterConfiguration {
-    let sizeDefinitionsPath: String
-    let defaultFontSize: CGFloat
+    public let sizeDefinitionsPath: String
+    public let defaultFontSize: CGFloat
     
     private let defaultSizeDefinitionsPath = NSBundle(forClass: Typesetter.self).pathForResource("FontSizes", ofType: "csv") ?? "NoFontSizesFilePath"
     private let defaultDefaultFontSize: CGFloat = 12.0
     private let defaultApplication = UIApplication.sharedApplication()
 
-    init() {
+    public init() {
         self.sizeDefinitionsPath = defaultSizeDefinitionsPath
         self.defaultFontSize = defaultDefaultFontSize
     }
     
-    init(sizeDefinitionsPath: String) {
+    public init(sizeDefinitionsPath: String) {
         self.sizeDefinitionsPath = sizeDefinitionsPath
         self.defaultFontSize = defaultDefaultFontSize
     }
     
-    init(sizeDefinitionsPath: String, defaultFontSize: CGFloat) {
+    public init(sizeDefinitionsPath: String, defaultFontSize: CGFloat) {
         self.sizeDefinitionsPath = sizeDefinitionsPath
         self.defaultFontSize = defaultFontSize
     }
