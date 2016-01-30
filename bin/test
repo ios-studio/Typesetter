@@ -2,7 +2,7 @@
 
 set -o pipefail
 
-if [ -z $DESTINATION ]; then
+if [[ -z $DESTINATION ]]; then
     export DESTINATION='platform=iOS Simulator,name=iPhone 6,OS=9.2'
 fi
 
