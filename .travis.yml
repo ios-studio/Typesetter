@@ -49,12 +49,24 @@ env:
       - DESTINATION="OS=8.4,name=iPhone 6"
       - DESTINATION="OS=8.4,name=iPhone 6s"
 
+before_install:
+  - brew update
+  - brew install carthage
+
 before_script:
   - carthage update --platform iOS --no-use-binaries
+
 script: ./bin/test
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
+
+skip_cleanup: true
+
+before_deploy:
+    - carthage build --no-skip-current
+    - carthage archive Typesetter
 
 notifications:
     email: true
 
-after_success:
-    - bash <(curl -s https://codecov.io/bash)
