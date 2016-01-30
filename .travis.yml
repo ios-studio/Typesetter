@@ -49,6 +49,8 @@ env:
       - DESTINATION="OS=8.4,name=iPhone 6"
       - DESTINATION="OS=8.4,name=iPhone 6s"
 
+before_script:
+  - carthage update --platform iOS --no-use-binaries
 script: ./bin/test
 
 notifications:
