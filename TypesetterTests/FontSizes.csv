@@ -1,0 +1,13 @@
+SizeName,Body,Callout,Caption1,Caption2,Footnote,Headline,Subheadline,Title1,Title2,Title3
+ExtraSmall,7,7,7,7,7,11,7,15,19,23
+Small,9,9,9,9,9,13,9,17,21,25
+Medium,11,11,11,11,11,15,11,19,23,27
+Large,13,13,13,13,13,17,13,21,25,29
+ExtraLarge,15,15,15,15,15,19,15,23,27,31
+ExtraExtraLarge,17,17,17,17,17,21,17,25,29,33
+ExtraExtraExtraLarge,19,19,19,19,19,23,19,27,31,35
+AccessibilityMedium,21,21,21,21,21,25,21,29,33,37
+AccessibilityLarge,23,23,23,23,23,27,23,31,35,39
+AccessibilityExtraLarge,25,25,25,25,25,29,25,33,37,41
+AccessibilityExtraExtraLarge,27,27,27,27,27,31,27,35,39,43
+AccessibilityExtraExtraExtraLarge,29,29,29,29,29,33,29,37,41,45

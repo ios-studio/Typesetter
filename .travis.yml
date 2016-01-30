@@ -1,0 +1,16 @@
+language: swift
+osx_image: xcode7.2
+xcode_project: Typesetter.xcodeproj
+
+before_install:
+  - brew update
+  - brew upgrade xctool
+  - brew install carthage
+  - carthage bootstrap --verbose
+  - carthage update --platform iOS --no-use-binaries
+
+script:
+  - xcodebuild test -workspace Typesetter.xcworkspace -scheme Typesetter -sdk iphonesimulator
+
+notifications:
+    email: true

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -o pipefail
+
+xcodebuild test -project Typesetter.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.2' -scheme Typesetter -sdk iphonesimulator BUILD_ACTIVE_ARCH=NO | xcpretty -t -c
