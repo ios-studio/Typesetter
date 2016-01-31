@@ -11,9 +11,21 @@ public class Typesetter {
         return matrix.count > 0
     }
     
+    private static var resourcePaths: [NSBundle: String] = [:]
+    private static func defaultResourcePathForBundle(bundle: NSBundle) -> String? {
+        if let path = resourcePaths[bundle] {
+            return path
+        } else if let path = bundle.pathForResource("FontSizes", ofType: "csv") {
+            resourcePaths[bundle] = path
+            return path
+        }
+        
+        return nil
+    }
+    
     public convenience init(bundle: NSBundle) {
-        guard let path = bundle.pathForResource("FontSizes", ofType: "csv") else {
-            self.init(configuration: TypesetterConfiguration())
+        guard let path = Typesetter.defaultResourcePathForBundle(bundle) else {
+            self.init(configuration: TypesetterConfiguration(sizeDefinitionsPath: "NoPath"))
             return
         }
         

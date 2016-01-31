@@ -49,6 +49,14 @@ class TypesetterTests: XCTestCase {
         expect(convenienceTypesetter.hasSizes).to(beTrue())
     }
     
+    func testConvenienceInitPerformance() {
+        self.measureBlock {
+            for _ in 1..<10000 {
+                let _ = Typesetter(bundle: NSBundle(forClass: self.dynamicType))
+            }
+        }
+    }
+    
     func testDescriptorFor() {
         let descriptor = typesetter.descriptorFor(size: .Small, textStyle: .Body, font: Font.Bold)
         expect(descriptor.pointSize).to(equal(9.0))

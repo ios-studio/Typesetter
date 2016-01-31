@@ -4,12 +4,6 @@ import Nimble
 import Typesetter
 
 class TypesetterConfigurationTests: XCTestCase {
-    
-    func testDefaults() {
-        let configuration = TypesetterConfiguration()
-        expect(configuration.sizeDefinitionsPath).to(equal("NoFontSizesFilePath"))
-        expect(configuration.defaultFontSize).to(equal(12.0))
-    }
 
     func testSizeDefinitionsPath() {
         let configuration = TypesetterConfiguration(sizeDefinitionsPath: "PATH")
