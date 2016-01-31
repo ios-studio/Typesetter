@@ -34,7 +34,3 @@ skip_cleanup: true
 before_deploy:
     - carthage build --no-skip-current
     - carthage archive Typesetter
-
-notifications:
-    email: true
-
