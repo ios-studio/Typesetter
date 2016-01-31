@@ -2,12 +2,12 @@ import UIKit
 
 public enum TypesetterTextStyle: String {
     case Body
-    case Callout
     case Caption1
     case Caption2
     case Footnote
     case Headline
     case Subheadline
+    case Callout
     case Title1
     case Title2
     case Title3
@@ -60,29 +60,48 @@ public enum TypesetterTextStyle: String {
     }
     
     init(textStyle: String) {
-        switch textStyle {
-        case UIFontTextStyleBody:
-            self = .Body
-        case UIFontTextStyleCallout:
-            self = .Callout
-        case UIFontTextStyleCaption1:
-            self = .Caption1
-        case UIFontTextStyleCaption2:
-            self = .Caption2
-        case UIFontTextStyleFootnote:
-            self = .Footnote
-        case UIFontTextStyleHeadline:
-            self = .Headline
-        case UIFontTextStyleSubheadline:
-            self = .Subheadline
-        case UIFontTextStyleTitle1:
-            self = .Title1
-        case UIFontTextStyleTitle2:
-            self = .Title2
-        case UIFontTextStyleTitle3:
-            self = .Title3
-        default:
-            self = .Body
+        if #available(iOS 9.0, *) {
+            switch textStyle {
+            case UIFontTextStyleBody:
+                self = .Body
+            case UIFontTextStyleCaption1:
+                self = .Caption1
+            case UIFontTextStyleCaption2:
+                self = .Caption2
+            case UIFontTextStyleFootnote:
+                self = .Footnote
+            case UIFontTextStyleHeadline:
+                self = .Headline
+            case UIFontTextStyleSubheadline:
+                self = .Subheadline
+            case UIFontTextStyleCallout:
+                self = .Callout
+            case UIFontTextStyleTitle1:
+                self = .Title1
+            case UIFontTextStyleTitle2:
+                self = .Title2
+            case UIFontTextStyleTitle3:
+                self = .Title3
+            default:
+                self = .Body
+            }
+        } else {
+            switch textStyle {
+            case UIFontTextStyleBody:
+                self = .Body
+            case UIFontTextStyleCaption1:
+                self = .Caption1
+            case UIFontTextStyleCaption2:
+                self = .Caption2
+            case UIFontTextStyleFootnote:
+                self = .Footnote
+            case UIFontTextStyleHeadline:
+                self = .Headline
+            case UIFontTextStyleSubheadline:
+                self = .Subheadline
+            default:
+                self = .Body
+            }
         }
     }
 }

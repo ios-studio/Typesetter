@@ -6,18 +6,28 @@ import Nimble
 class TypesetterTextStyleTests: XCTestCase {
 
     func testStyleMapping() {
-        let mapping: [TypesetterTextStyle: String] = [
+        var mapping: [TypesetterTextStyle: String] = [
             .Body: UIFontTextStyleBody,
-            .Callout: UIFontTextStyleCallout,
             .Caption1: UIFontTextStyleCaption1,
             .Caption2: UIFontTextStyleCaption2,
             .Footnote: UIFontTextStyleFootnote,
             .Headline: UIFontTextStyleHeadline,
             .Subheadline: UIFontTextStyleSubheadline,
-            .Title1: UIFontTextStyleTitle1,
-            .Title2: UIFontTextStyleTitle2,
-            .Title3: UIFontTextStyleTitle3
         ]
+        
+        if #available(iOS 9.0, *) {
+            let additionals: [TypesetterTextStyle: String] = [
+                .Callout: UIFontTextStyleCallout,
+                .Title1: UIFontTextStyleTitle1,
+                .Title2: UIFontTextStyleTitle2,
+                .Title3: UIFontTextStyleTitle3
+            ]
+            
+            for (textStyle, textStyleString) in additionals {
+                mapping[textStyle] = textStyleString
+            }
+        }
+        
         
         for (expectedFontTextStyle, inputFontTextStyleString) in mapping {
             expect(TypesetterTextStyle(textStyle: inputFontTextStyleString)).to(equal(expectedFontTextStyle))

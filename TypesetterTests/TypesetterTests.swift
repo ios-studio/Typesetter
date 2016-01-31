@@ -56,7 +56,7 @@ class TypesetterTests: XCTestCase {
     }
     
     func testFontFor() {
-        let font = typesetter.sizedFontFor(TypesetterTextStyle.Subheadline.rawValue, font: Font.Regular)
+        let font = typesetter.sizedFontFor(.Subheadline, font: Font.Regular)
         expect(font.pointSize).to(equal(11.0))
         expect(font.fontName).to(equal(Font.Regular.name))
         expect(font.familyName).to(equal("Georgia"))
