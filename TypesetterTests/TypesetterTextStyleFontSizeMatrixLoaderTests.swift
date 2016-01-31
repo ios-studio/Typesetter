@@ -71,8 +71,18 @@ class TypesetterTextStyleFontSizeMatrixLoaderTests: XCTestCase {
         expect(sizeMatrix).to(beNil())
     }
     
+    func testWithCSVWithMissingSizeHeader() {
+        let sizeMatrix = TypesetterTextStyleFontSizeMatrixLoader(path: csvPath("MissingSizeHeader")).load()
+        expect(sizeMatrix).to(beNil())
+    }
+    
     func testWithCorruptCSV() {
         let sizeMatrix = TypesetterTextStyleFontSizeMatrixLoader(path: csvPath("CorruptFontSizes")).load()
+        expect(sizeMatrix).to(beNil())
+    }
+    
+    func testWithCorruptFile() {
+        let sizeMatrix = TypesetterTextStyleFontSizeMatrixLoader(path: csvPath("CorruptFile")).load()
         expect(sizeMatrix).to(beNil())
     }
     

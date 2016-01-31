@@ -68,7 +68,7 @@ internal class TypesetterTextStyleFontSizeMatrixLoader {
         
         do {
             return try CSV(contentsOfFile: path, error: error)
-        } catch _ {
+        } catch {
             return nil
         }
     }

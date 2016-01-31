@@ -26,6 +26,8 @@
 		536F384E1C5D141700948324 /* TypesetterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536F384D1C5D141700948324 /* TypesetterTests.swift */; };
 		53DD935E1C5E1F6E00BBDA58 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 536F384B1C5D13B100948324 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53DD93601C5E1F8C00BBDA58 /* SwiftCSV.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 536F38491C5D13A200948324 /* SwiftCSV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		53DD93621C5E26AB00BBDA58 /* MissingSizeHeader.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53DD93611C5E26AB00BBDA58 /* MissingSizeHeader.csv */; };
+		53DD93641C5E26E600BBDA58 /* CorruptFile.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53DD93631C5E26E600BBDA58 /* CorruptFile.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		536F38491C5D13A200948324 /* SwiftCSV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCSV.framework; path = Carthage/Build/iOS/SwiftCSV.framework; sourceTree = "<group>"; };
 		536F384B1C5D13B100948324 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		536F384D1C5D141700948324 /* TypesetterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesetterTests.swift; sourceTree = "<group>"; };
+		53DD93611C5E26AB00BBDA58 /* MissingSizeHeader.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MissingSizeHeader.csv; sourceTree = "<group>"; };
+		53DD93631C5E26E600BBDA58 /* CorruptFile.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CorruptFile.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +162,9 @@
 			children = (
 				536F38411C5D132800948324 /* IncompleteFontSizes.csv */,
 				536F38421C5D132800948324 /* FontSizes.csv */,
+				53DD93611C5E26AB00BBDA58 /* MissingSizeHeader.csv */,
 				536F38431C5D132800948324 /* CorruptFontSizes.csv */,
+				53DD93631C5E26E600BBDA58 /* CorruptFile.csv */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -254,7 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				536F38461C5D132800948324 /* CorruptFontSizes.csv in Resources */,
+				53DD93621C5E26AB00BBDA58 /* MissingSizeHeader.csv in Resources */,
 				536F38451C5D132800948324 /* FontSizes.csv in Resources */,
+				53DD93641C5E26E600BBDA58 /* CorruptFile.csv in Resources */,
 				536F38441C5D132800948324 /* IncompleteFontSizes.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
