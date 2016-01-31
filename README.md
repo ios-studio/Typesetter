@@ -43,8 +43,8 @@ Typesetter can be passed a `TypesetterConfiguration` object where you can specif
 Pass the bundle to initialize. Typesetter will look up the `FontSizes` file in the bundle and cache it for subsequent initializations in the same process:
 
 ```Swift
-    let bundle = NSBundle(forClass: self.dynamicType)
-    let typesetter = Typesetter(bundle: bundle)
+let bundle = NSBundle(forClass: self.dynamicType)
+let typesetter = Typesetter(bundle: bundle)
 ```
 
 Typically, all you will then use is the `sizedFontFor` method, which you can use in two ways:
