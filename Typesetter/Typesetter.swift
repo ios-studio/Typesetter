@@ -3,13 +3,7 @@ import UIKit
 public class Typesetter {
     typealias TextStyleFontSizeMatrix = [TypesetterTextStyle: [TypesetterFontSize: CGFloat]]
     
-    public static func configure(with configuration: TypesetterConfiguration) {
-        self.configuration = configuration
-    }
-    private static var configuration = TypesetterConfiguration()
-    
-    public let configuration: TypesetterConfiguration
-    
+    private let configuration: TypesetterConfiguration
     private let matrix: TextStyleFontSizeMatrix
     private let application = UIApplication.sharedApplication()
 
@@ -17,7 +11,7 @@ public class Typesetter {
         return matrix.count > 0
     }
     
-    public init(configuration: TypesetterConfiguration = Typesetter.configuration) {
+    public init(configuration: TypesetterConfiguration = TypesetterConfiguration()) {
         self.configuration = configuration
         if let matrix = TypesetterTextStyleFontSizeMatrixLoader(path: configuration.sizeDefinitionsPath).load() {
             self.matrix = matrix

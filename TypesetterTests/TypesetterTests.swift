@@ -44,12 +44,6 @@ class TypesetterTests: XCTestCase {
         super.tearDown()
     }
     
-    func testGlobalConfigure() {
-        let globalConfiguration = TypesetterConfiguration(sizeDefinitionsPath: "PATH")
-        Typesetter.configure(with: globalConfiguration)
-        expect(Typesetter().configuration.sizeDefinitionsPath).to(equal("PATH"))
-    }
-    
     func testConvenienceInit() {
         let convenienceTypesetter = Typesetter()
         expect(convenienceTypesetter.hasSizes).to(beFalse())
