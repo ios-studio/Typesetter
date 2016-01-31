@@ -14,16 +14,11 @@ import Typesetter
 class TypesetterTests: XCTestCase {
     
     enum Font: String, TypesetterFont {
-        case Regular
-        case Bold
+        case Regular = "Georgia"
+        case Bold = "Courier"
         
         var name: String {
-            switch self {
-            case .Regular:
-                return "Georgia"
-            case .Bold:
-                return "Courier"
-            }
+            return rawValue
         }
     }
     
