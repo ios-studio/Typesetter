@@ -32,6 +32,8 @@ class TypesetterTextStyleTests: XCTestCase {
         for (expectedFontTextStyle, inputFontTextStyleString) in mapping {
             expect(TypesetterTextStyle(textStyle: inputFontTextStyleString)).to(equal(expectedFontTextStyle))
         }
+        
+        expect(TypesetterTextStyle(textStyle: "Garbage")).to(equal(TypesetterTextStyle.Body))
     }
     
     func testStyleCount() {
