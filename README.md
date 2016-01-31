@@ -40,14 +40,20 @@ Typesetter can be passed a `TypesetterConfiguration` object where you can specif
 
 ## Using Typesetter
 
-Typically, all you will use is the `sizedFontFor` method, which you can use in two ways:
+Pass the bundle to initialize. Typesetter will look up the `FontSizes` file in the bundle and cache it for subsequent initializations in the same process:
+
+```Swift
+    let bundle = NSBundle(forClass: self.dynamicType)
+    let typesetter = Typesetter(bundle: bundle)
+```
+
+Typically, all you will then use is the `sizedFontFor` method, which you can use in two ways:
 
 #### Using the `TypesetterTextStyle` enum
 
 Remember the definition of `Font` from above? This is how to get a font sized according to your definitions and the users font size settings:
 
 ```Swift
-let typesetter = Typesetter()
 let sizedFont = typesetter.sizedFontFor(.Body, font: Font.Bold)
 ```
 
@@ -56,9 +62,10 @@ let sizedFont = typesetter.sizedFontFor(.Body, font: Font.Bold)
 This is a convenience method to be able to use Typesetter with `@IBDesignable` / `@IBInspectable`. Since `@IBInspectable` does not yet work with enum types, you can use the version of `sizedFontFor` without a type check like so:
 
 ```Swift
-let typesetter = Typesetter()
 let sizedFont = typesetter.sizedFontFor("Body", font: Font.Bold)
 ```
+
+For an example involving `@IBDesignable`, [go to the wiki](https://github.com/ios-studio/Typesetter/wiki/Setting-up-an-@IBDesignable-Label)
 
 ## Contributions
 
