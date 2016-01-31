@@ -1,5 +1,4 @@
-# Typesetter
-[![Build Status](https://travis-ci.org/ios-studio/Typesetter.svg?branch=master)](https://travis-ci.org/ios-studio/Typesetter) [![codecov.io](https://codecov.io/github/ios-studio/Typesetter/coverage.svg?branch=master)](https://codecov.io/github/ios-studio/Typesetter?branch=master) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
+# Typesetter [![Build Status](https://travis-ci.org/ios-studio/Typesetter.svg?branch=master)](https://travis-ci.org/ios-studio/Typesetter) [![codecov.io](https://codecov.io/github/ios-studio/Typesetter/coverage.svg?branch=master)](https://codecov.io/github/ios-studio/Typesetter?branch=master) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 Dynamic type is great, but to adjust the typographic setup to work with the font & content sizes available can be daunting.
 This library puts you back in control by reading the sizes from a CSV file which can easily be generated from Google Docs or other common table editors.
 
