@@ -11,7 +11,16 @@ public class Typesetter {
         return matrix.count > 0
     }
     
-    public init(configuration: TypesetterConfiguration = TypesetterConfiguration()) {
+    public convenience init(bundle: NSBundle) {
+        guard let path = bundle.pathForResource("FontSizes", ofType: "csv") else {
+            self.init(configuration: TypesetterConfiguration())
+            return
+        }
+        
+        self.init(configuration: TypesetterConfiguration(sizeDefinitionsPath: path))
+    }
+    
+    public init(configuration: TypesetterConfiguration) {
         self.configuration = configuration
         if let matrix = TypesetterTextStyleFontSizeMatrixLoader(path: configuration.sizeDefinitionsPath).load() {
             self.matrix = matrix

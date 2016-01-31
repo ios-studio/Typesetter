@@ -45,8 +45,8 @@ class TypesetterTests: XCTestCase {
     }
     
     func testConvenienceInit() {
-        let convenienceTypesetter = Typesetter()
-        expect(convenienceTypesetter.hasSizes).to(beFalse())
+        let convenienceTypesetter = Typesetter(bundle: NSBundle(forClass: self.dynamicType))
+        expect(convenienceTypesetter.hasSizes).to(beTrue())
     }
     
     func testDescriptorFor() {
