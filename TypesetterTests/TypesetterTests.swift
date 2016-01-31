@@ -17,19 +17,6 @@ class TypesetterTests: XCTestCase {
         case Regular
         case Bold
         
-        static var count: Int {
-            var count = 0
-            switch self.Regular {
-            case .Regular:
-                count++
-                fallthrough
-            case .Bold:
-                count++
-            }
-            
-            return count
-        }
-        
         var name: String {
             switch self {
             case .Regular:

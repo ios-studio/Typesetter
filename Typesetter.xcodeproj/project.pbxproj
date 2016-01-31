@@ -24,6 +24,8 @@
 		536F384A1C5D13A200948324 /* SwiftCSV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536F38491C5D13A200948324 /* SwiftCSV.framework */; };
 		536F384C1C5D13B100948324 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536F384B1C5D13B100948324 /* Nimble.framework */; };
 		536F384E1C5D141700948324 /* TypesetterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536F384D1C5D141700948324 /* TypesetterTests.swift */; };
+		53DD935E1C5E1F6E00BBDA58 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 536F384B1C5D13B100948324 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		53DD93601C5E1F8C00BBDA58 /* SwiftCSV.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 536F38491C5D13A200948324 /* SwiftCSV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,29 @@
 			remoteInfo = Typesetter;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		53DD935D1C5E1F6100BBDA58 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				53DD935E1C5E1F6E00BBDA58 /* Nimble.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53DD935F1C5E1F8400BBDA58 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				53DD93601C5E1F8C00BBDA58 /* SwiftCSV.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		536F38121C5D11E800948324 /* Typesetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Typesetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,24 +165,14 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		536F380F1C5D11E800948324 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		536F38111C5D11E800948324 /* Typesetter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 536F38261C5D11E800948324 /* Build configuration list for PBXNativeTarget "Typesetter" */;
 			buildPhases = (
+				53DD935F1C5E1F8400BBDA58 /* CopyFiles */,
 				536F380D1C5D11E800948324 /* Sources */,
 				536F380E1C5D11E800948324 /* Frameworks */,
-				536F380F1C5D11E800948324 /* Headers */,
 				536F38101C5D11E800948324 /* Resources */,
 			);
 			buildRules = (
@@ -173,6 +188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 536F38291C5D11E800948324 /* Build configuration list for PBXNativeTarget "TypesetterTests" */;
 			buildPhases = (
+				53DD935D1C5E1F6100BBDA58 /* CopyFiles */,
 				536F38181C5D11E800948324 /* Sources */,
 				536F38191C5D11E800948324 /* Frameworks */,
 				536F381A1C5D11E800948324 /* Resources */,

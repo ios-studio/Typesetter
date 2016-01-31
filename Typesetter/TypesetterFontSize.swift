@@ -16,6 +16,7 @@ public enum TypesetterFontSize: String {
         
     static var count: Int {
         var count = 0
+
         switch self.Small {
         case .Small:
             count++
