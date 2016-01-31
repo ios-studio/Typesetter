@@ -19,7 +19,7 @@ pod "Typesetter", "~> 0.1.0"
 ```
 
 ## Default Setup
-Typesetter will look for a file named `FontSizes.csv` in your current target. The contents of the file should look like [this](https://github.com/ios-studio/Typesetter/blob/master/TypesetterTests/FontSizes.csv). It is important to not delete any columns or rows, otherwise Typesetter will default to a standard font size for all the fonts.
+Typesetter will look for a file named `FontSizes.csv` in the specified bundle or at the specified path. The contents of the file should look like [this](https://github.com/ios-studio/Typesetter/blob/master/TypesetterTests/FontSizes.csv). It is important to not delete any columns or rows, otherwise Typesetter will default to a standard font size for all the fonts.
 
 For the fonts you'd like to use in your project, define a class which conforms to the protocol `TypesetterFont`. The only requirement of that protocol is that the object responds to the property `name`, so for example it could look like:
 
