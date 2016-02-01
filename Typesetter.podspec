@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
 
-  s.dependency 'SwiftCSV', '~> 0.1.3'
+  s.dependency 'SwiftCSV', '~> 0.1.2'
 
   s.source_files = "Typesetter/**/*.swift"
   s.requires_arc = true
