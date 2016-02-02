@@ -17,10 +17,6 @@ env:
       - DESTINATION="OS=9.2,name=iPhone 6 Plus"
       - DESTINATION="OS=9.2,name=iPhone 6s Plus"
 
-before_install:
-  - brew update
-  - brew install carthage
-
 before_script:
   - carthage update --platform iOS --no-use-binaries
 
