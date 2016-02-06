@@ -18,7 +18,6 @@
 		536F383D1C5D131900948324 /* TypesetterTextStyleFontSizeMatrixLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536F38391C5D131900948324 /* TypesetterTextStyleFontSizeMatrixLoaderTests.swift */; };
 		536F383E1C5D131900948324 /* TypesetterFontSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536F383A1C5D131900948324 /* TypesetterFontSizeTests.swift */; };
 		536F383F1C5D131900948324 /* TypesetterConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536F383B1C5D131900948324 /* TypesetterConfigurationTests.swift */; };
-		536F384A1C5D13A200948324 /* SwiftCSV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536F38491C5D13A200948324 /* SwiftCSV.framework */; };
 		536F384C1C5D13B100948324 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 536F384B1C5D13B100948324 /* Nimble.framework */; };
 		536F384E1C5D141700948324 /* TypesetterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536F384D1C5D141700948324 /* TypesetterTests.swift */; };
 		53DD05921C661D2400DFB534 /* CSVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD05911C661D2400DFB534 /* CSVTests.swift */; };
@@ -27,8 +26,9 @@
 		53DD05A51C661DAE00DFB534 /* FontSizes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53DD05A01C661DAE00DFB534 /* FontSizes.csv */; };
 		53DD05A61C661DAE00DFB534 /* IncompleteFontSizes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53DD05A11C661DAE00DFB534 /* IncompleteFontSizes.csv */; };
 		53DD05A71C661DAE00DFB534 /* MissingSizeHeader.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53DD05A21C661DAE00DFB534 /* MissingSizeHeader.csv */; };
+		53DD05A91C66204F00DFB534 /* CSV.csv in Resources */ = {isa = PBXBuildFile; fileRef = 53DD05A81C66204F00DFB534 /* CSV.csv */; };
+		53DD05AB1C66209F00DFB534 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD05AA1C66209F00DFB534 /* CSV.swift */; };
 		53DD935E1C5E1F6E00BBDA58 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 536F384B1C5D13B100948324 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		53DD93601C5E1F8C00BBDA58 /* SwiftCSV.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 536F38491C5D13A200948324 /* SwiftCSV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				53DD93601C5E1F8C00BBDA58 /* SwiftCSV.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +78,6 @@
 		536F38391C5D131900948324 /* TypesetterTextStyleFontSizeMatrixLoaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesetterTextStyleFontSizeMatrixLoaderTests.swift; sourceTree = "<group>"; };
 		536F383A1C5D131900948324 /* TypesetterFontSizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesetterFontSizeTests.swift; sourceTree = "<group>"; };
 		536F383B1C5D131900948324 /* TypesetterConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesetterConfigurationTests.swift; sourceTree = "<group>"; };
-		536F38491C5D13A200948324 /* SwiftCSV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCSV.framework; path = Carthage/Build/iOS/SwiftCSV.framework; sourceTree = "<group>"; };
 		536F384B1C5D13B100948324 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		536F384D1C5D141700948324 /* TypesetterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypesetterTests.swift; sourceTree = "<group>"; };
 		53DD05911C661D2400DFB534 /* CSVTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVTests.swift; sourceTree = "<group>"; };
@@ -88,6 +86,8 @@
 		53DD05A01C661DAE00DFB534 /* FontSizes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FontSizes.csv; sourceTree = "<group>"; };
 		53DD05A11C661DAE00DFB534 /* IncompleteFontSizes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IncompleteFontSizes.csv; sourceTree = "<group>"; };
 		53DD05A21C661DAE00DFB534 /* MissingSizeHeader.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MissingSizeHeader.csv; sourceTree = "<group>"; };
+		53DD05A81C66204F00DFB534 /* CSV.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CSV.csv; sourceTree = "<group>"; };
+		53DD05AA1C66209F00DFB534 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				536F384A1C5D13A200948324 /* SwiftCSV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				536F384B1C5D13B100948324 /* Nimble.framework */,
-				536F38491C5D13A200948324 /* SwiftCSV.framework */,
 				536F38141C5D11E800948324 /* Typesetter */,
 				536F38201C5D11E800948324 /* TypesetterTests */,
 				536F38131C5D11E800948324 /* Products */,
@@ -134,6 +132,7 @@
 		536F38141C5D11E800948324 /* Typesetter */ = {
 			isa = PBXGroup;
 			children = (
+				53DD05AA1C66209F00DFB534 /* CSV.swift */,
 				536F382C1C5D12F600948324 /* TypesetterTextStyle.swift */,
 				536F382D1C5D12F600948324 /* TypesetterTextStyleFontSizeMatrixLoader.swift */,
 				536F382E1C5D12F600948324 /* TypesetterFontSize.swift */,
@@ -149,13 +148,13 @@
 			isa = PBXGroup;
 			children = (
 				53DD05931C661D6D00DFB534 /* Support */,
+				53DD05911C661D2400DFB534 /* CSVTests.swift */,
 				536F384D1C5D141700948324 /* TypesetterTests.swift */,
 				536F38381C5D131900948324 /* TypesetterTextStyleTests.swift */,
 				536F38391C5D131900948324 /* TypesetterTextStyleFontSizeMatrixLoaderTests.swift */,
 				536F383A1C5D131900948324 /* TypesetterFontSizeTests.swift */,
 				536F383B1C5D131900948324 /* TypesetterConfigurationTests.swift */,
 				536F38231C5D11E800948324 /* Info.plist */,
-				53DD05911C661D2400DFB534 /* CSVTests.swift */,
 			);
 			path = TypesetterTests;
 			sourceTree = "<group>";
@@ -168,6 +167,7 @@
 				53DD05A01C661DAE00DFB534 /* FontSizes.csv */,
 				53DD05A11C661DAE00DFB534 /* IncompleteFontSizes.csv */,
 				53DD05A21C661DAE00DFB534 /* MissingSizeHeader.csv */,
+				53DD05A81C66204F00DFB534 /* CSV.csv */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -265,6 +265,7 @@
 				53DD05A41C661DAE00DFB534 /* CorruptFontSizes.csv in Resources */,
 				53DD05A71C661DAE00DFB534 /* MissingSizeHeader.csv in Resources */,
 				53DD05A31C661DAE00DFB534 /* CorruptFile.csv in Resources */,
+				53DD05A91C66204F00DFB534 /* CSV.csv in Resources */,
 				53DD05A61C661DAE00DFB534 /* IncompleteFontSizes.csv in Resources */,
 				53DD05A51C661DAE00DFB534 /* FontSizes.csv in Resources */,
 			);
@@ -282,6 +283,7 @@
 				536F38321C5D12F600948324 /* TypesetterTextStyle.swift in Sources */,
 				536F38331C5D12F600948324 /* TypesetterTextStyleFontSizeMatrixLoader.swift in Sources */,
 				536F38371C5D12F600948324 /* Typesetter.swift in Sources */,
+				53DD05AB1C66209F00DFB534 /* CSV.swift in Sources */,
 				536F38351C5D12F600948324 /* TypesetterFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

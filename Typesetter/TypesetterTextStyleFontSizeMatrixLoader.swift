@@ -1,5 +1,4 @@
 import UIKit
-import SwiftCSV
 
 internal class TypesetterTextStyleFontSizeMatrixLoader {
     
@@ -64,13 +63,7 @@ internal class TypesetterTextStyleFontSizeMatrixLoader {
     }
     
     private func loadCSV(path: String) -> CSV? {
-        let error: NSErrorPointer = nil
-        
-        do {
-            return try CSV(contentsOfFile: path, error: error)
-        } catch {
-            return nil
-        }
+        return CSV(contentsOfFile: path)
     }
     
     private func logReadFailure(message: String) {
