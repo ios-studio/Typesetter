@@ -68,12 +68,6 @@ class TypesetterTests: XCTestCase {
         }
     }
     
-    func testDescriptorFor() {
-        let descriptor = typesetter.descriptorFor(size: .Small, textStyle: .Body, font: Font.Bold)
-        expect(descriptor.pointSize).to(equal(9.0))
-        expect(descriptor.postscriptName).to(equal(Font.Bold.name))
-    }
-    
     func testFontFor() {
         let font = typesetter.sizedFontFor(.Subheadline, font: Font.Regular)
         expect(font.pointSize).to(equal(11.0))

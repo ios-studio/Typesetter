@@ -1,27 +1,33 @@
 import UIKit
 
+/**
+ A wrapper around UIFontTextStyles. Maps 1:1 to the corresponding UIFontTextStyle for iOS 9 while allowing for nicer notation.
+*/
 public enum TypesetterTextStyle: String {
+    /** The text style used for body text. */
     case Body
-    case Caption1
-    case Caption2
-    case Footnote
-    case Headline
-    case Subheadline
+    /** The text style used for callouts. */
     case Callout
+    /** The text style used for standard captions. */
+    case Caption1
+    /** The text style used for alternate captions. */
+    case Caption2
+    /** The text style used in footnotes. */
+    case Footnote
+    /** The text style used for headings. */
+    case Headline
+    /** The text style used for subheadings. */
+    case Subheadline
+    /** The text style used for first level hierarchical headings. */
     case Title1
+    /** The text style used for second level hierarchical headings. */
     case Title2
+    /** The text style used for third level hierarchical headings. */
     case Title3
     
-    // The only count solution that
-    // 1. Works for string enums and int enums with non-sequential values or not starting at 0
-    // 2. Does not rely on any swift internals
-    // 3. Gives a compile time error when an update is needed (non-exhaustive switch case)
-    // 4. Can be optimized by the compiler, worst case is n comparison + increment operations
-    
-    // Weaknesses:
-    // 1. Has to start with the right case
-    // 2. Allows for double count because of fallthrough
-    //
+    /**
+     The count of available text styles, which is 10.
+    */
     static var count: Int {
         var count = 0
         switch self.Body {
@@ -59,6 +65,11 @@ public enum TypesetterTextStyle: String {
         return count
     }
     
+    /**
+     Initializes a new text style from an UITextStyle
+     
+     - Parameter textStyle: The UITextStyle to map.
+    */
     init(textStyle: String) {
         if #available(iOS 9.0, *) {
             switch textStyle {
