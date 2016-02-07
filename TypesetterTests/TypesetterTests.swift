@@ -49,6 +49,17 @@ class TypesetterTests: XCTestCase {
         expect(convenienceTypesetter.hasSizes).to(beTrue())
     }
     
+    func testConvenienceInitWithNoPath() {
+        let convenienceTypesetter = Typesetter(bundle: NSBundle())
+        expect(convenienceTypesetter.hasSizes).to(beFalse())
+    }
+    
+    func testFontForWithoutSizes() {
+        typesetter = Typesetter(bundle: NSBundle())
+        let font = typesetter.sizedFontFor(.Body, font: Font.Bold)
+        expect(font.pointSize).to(equal(12.0))
+    }
+    
     func testConvenienceInitPerformance() {
         self.measureBlock {
             for _ in 1..<10000 {
