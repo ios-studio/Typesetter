@@ -9,8 +9,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
 
-  s.dependency 'SwiftCSV', "~> 0.1.3", git: "git@github.com:naoty/SwiftCSV.git"
-
   s.source_files = "Typesetter/**/*.swift"
   s.requires_arc = true
 end
