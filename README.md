@@ -2,6 +2,8 @@
 Dynamic type is great, but to adjust the typographic setup to work with the font & content sizes available can be daunting.
 This library puts you back in control by reading the sizes from a CSV file which can easily be generated from Google Docs or other common table editors.
 
+*The goal is to empower you and your designer with the ability to cooperate via this CSV file.*
+
 ## Installation
 
 #### Via [Carthage](https://github.com/Carthage/Carthage):
