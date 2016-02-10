@@ -13,7 +13,7 @@ Add the following your Cartfile:
 github "ios-studio/Typesetter" ~> 0.1.0
 ```
 
-#### Via [Cocoapods](https://cocoapods.org/):
+#### Via [CocoaPods](https://cocoapods.org/):
 Add the following your Podfile:
 
 ```ruby
