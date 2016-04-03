@@ -37,40 +37,40 @@ public enum TypesetterFontSize: String {
 
         switch self.Small {
         case .Small:
-            count++
+            count += 1
             fallthrough
         case .Medium:
-            count++
+            count += 1
             fallthrough
         case .Large:
-            count++
+            count += 1
             fallthrough
         case .ExtraSmall:
-            count++
+            count += 1
             fallthrough
         case .ExtraLarge:
-            count++
+            count += 1
             fallthrough
         case .ExtraExtraLarge:
-            count++
+            count += 1
             fallthrough
         case .ExtraExtraExtraLarge:
-            count++
+            count += 1
             fallthrough
         case .AccessibilityMedium:
-            count++
+            count += 1
             fallthrough
         case .AccessibilityLarge:
-            count++
+            count += 1
             fallthrough
         case .AccessibilityExtraLarge:
-            count++
+            count += 1
             fallthrough
         case .AccessibilityExtraExtraLarge:
-            count++
+            count += 1
             fallthrough
         case .AccessibilityExtraExtraExtraLarge:
-            count++
+            count += 1
         }
         
         return count

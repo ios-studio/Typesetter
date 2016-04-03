@@ -32,34 +32,34 @@ public enum TypesetterTextStyle: String {
         var count = 0
         switch self.Body {
         case .Body:
-            count++
+            count += 1
             fallthrough
         case .Callout:
-            count++
+            count += 1
             fallthrough
         case .Caption1:
-            count++
+            count += 1
             fallthrough
         case .Caption2:
-            count++
+            count += 1
             fallthrough
         case .Footnote:
-            count++
+            count += 1
             fallthrough
         case .Headline:
-            count++
+            count += 1
             fallthrough
         case .Subheadline:
-            count++
+            count += 1
             fallthrough
         case .Title1:
-            count++
+            count += 1
             fallthrough
         case .Title2:
-            count++
+            count += 1
             fallthrough
         case .Title3:
-            count++
+            count += 1
         }
         
         return count

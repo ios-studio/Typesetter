@@ -14,17 +14,18 @@ class CSV {
     private static let delimiter = NSCharacterSet(charactersInString: ",")
     
     private static func getColumns(headers: [String], lines: [String]) -> [String: [String]] {
-        return Array(lines)[1..<lines.count].reduce([String: [String]]()) { (var columns, line) in
+        return Array(lines)[1..<lines.count].reduce([String: [String]]()) { columns, line in
+            var newColumns = columns
             let row = line.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ","))
             for (index, header) in headers.enumerate() {
                 if columns[header] == nil {
-                    columns[header] = [row[index]]
+                    newColumns[header] = [row[index]]
                 } else {
-                    columns[header]?.append(row[index])
+                    newColumns[header]?.append(row[index])
                 }
             }
             
-            return columns
+            return newColumns
         }
     }
     
