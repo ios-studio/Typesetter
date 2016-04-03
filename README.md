@@ -10,14 +10,14 @@ This library puts you back in control by reading the sizes from a CSV file which
 Add the following your Cartfile:
 
 ```Swift
-github "ios-studio/Typesetter" ~> 0.1.0
+github "ios-studio/Typesetter" ~> 0.1.2
 ```
 
 #### Via [CocoaPods](https://cocoapods.org/):
 Add the following your Podfile:
 
 ```ruby
-pod "Typesetter", "~> 0.1.0"
+pod "Typesetter", "~> 0.1.2"
 ```
 
 ## Default Setup
