@@ -25,45 +25,13 @@ public enum TypesetterTextStyle: String {
     /** The text style used for third level hierarchical headings. */
     case Title3
     
+    
+    static let allStyles = [ Body, Callout, Caption1, Caption2, Footnote, Headline, Subheadline, Title1, Title2, Title3 ]
+    
     /**
      The count of available text styles, which is 10.
     */
-    static var count: Int {
-        var count = 0
-        switch self.Body {
-        case .Body:
-            count += 1
-            fallthrough
-        case .Callout:
-            count += 1
-            fallthrough
-        case .Caption1:
-            count += 1
-            fallthrough
-        case .Caption2:
-            count += 1
-            fallthrough
-        case .Footnote:
-            count += 1
-            fallthrough
-        case .Headline:
-            count += 1
-            fallthrough
-        case .Subheadline:
-            count += 1
-            fallthrough
-        case .Title1:
-            count += 1
-            fallthrough
-        case .Title2:
-            count += 1
-            fallthrough
-        case .Title3:
-            count += 1
-        }
-        
-        return count
-    }
+    static let count = allStyles.count
     
     /**
      Initializes a new text style from an UITextStyle

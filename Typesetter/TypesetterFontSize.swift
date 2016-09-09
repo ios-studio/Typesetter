@@ -29,52 +29,13 @@ public enum TypesetterFontSize: String {
     /** The largest font size reflecting the current accessibility settings. */
     case AccessibilityExtraExtraExtraLarge
     
+    static let allSizes = [ ExtraSmall, Small, Medium, Large, ExtraLarge, ExtraExtraLarge, ExtraExtraExtraLarge, AccessibilityMedium, AccessibilityLarge, AccessibilityExtraLarge, AccessibilityExtraExtraLarge, AccessibilityExtraExtraExtraLarge]
+    
     /**
      The number of typesetter font sizes available. Always returns 12.
     */
-    static var count: Int {
-        var count = 0
-
-        switch self.Small {
-        case .Small:
-            count += 1
-            fallthrough
-        case .Medium:
-            count += 1
-            fallthrough
-        case .Large:
-            count += 1
-            fallthrough
-        case .ExtraSmall:
-            count += 1
-            fallthrough
-        case .ExtraLarge:
-            count += 1
-            fallthrough
-        case .ExtraExtraLarge:
-            count += 1
-            fallthrough
-        case .ExtraExtraExtraLarge:
-            count += 1
-            fallthrough
-        case .AccessibilityMedium:
-            count += 1
-            fallthrough
-        case .AccessibilityLarge:
-            count += 1
-            fallthrough
-        case .AccessibilityExtraLarge:
-            count += 1
-            fallthrough
-        case .AccessibilityExtraExtraLarge:
-            count += 1
-            fallthrough
-        case .AccessibilityExtraExtraExtraLarge:
-            count += 1
-        }
-        
-        return count
-    }
+    
+    static let count = allSizes.count
     
     /**
      Initialize the corresponding TypesetterFontSize for a UIContentSize.
