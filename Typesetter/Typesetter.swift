@@ -20,25 +20,25 @@ import UIKit
  
  Where the columns headers are `TypesetterTextStyle`s and the row headers are `TypesetterFontSize`s.
 */
-public class Typesetter {
+open class Typesetter {
     internal typealias TextStyleFontSizeMatrix = [TypesetterTextStyle: [TypesetterFontSize: CGFloat]]
     
-    private let configuration: TypesetterConfiguration
-    private let matrix: TextStyleFontSizeMatrix
-    private let application = UIApplication.sharedApplication()
+    fileprivate let configuration: TypesetterConfiguration
+    fileprivate let matrix: TextStyleFontSizeMatrix
+    fileprivate let application = UIApplication.shared
 
     /**
      Check if this instance of typesetter has sizes loaded. Returns `true` if this instance has successfully loaded font sizes from a file, `false` if not.
     */
-    public var hasSizes: Bool {
+    open var hasSizes: Bool {
         return matrix.count > 0
     }
     
-    private static var resourcePaths: [NSBundle: String] = [:]
-    private static func defaultResourcePathForBundle(bundle: NSBundle) -> String? {
+    fileprivate static var resourcePaths: [Bundle: String] = [:]
+    fileprivate static func defaultResourcePathForBundle(_ bundle: Bundle) -> String? {
         if let path = resourcePaths[bundle] {
             return path
-        } else if let path = bundle.pathForResource("FontSizes", ofType: "csv") {
+        } else if let path = bundle.path(forResource: "FontSizes", ofType: "csv") {
             resourcePaths[bundle] = path
             return path
         }
@@ -51,7 +51,7 @@ public class Typesetter {
      
      - Parameter bundle: The bundle in which to look for the file named `FontSizes.csv`
     */
-    public convenience init(bundle: NSBundle) {
+    public convenience init(bundle: Bundle) {
         guard let path = Typesetter.defaultResourcePathForBundle(bundle) else {
             self.init(configuration: TypesetterConfiguration(sizeDefinitionsPath: "NoPath"))
             return
@@ -79,8 +79,8 @@ public class Typesetter {
         - textStyle: The `TypesetterTextStyle` text style to return the `UIFont` instance for
         - font: The `TypesetterFont` to return the `UIFont` with.
      */
-    public func sizedFontFor(textStyle: TypesetterTextStyle, font: TypesetterFont) -> UIFont {
-        let size = TypesetterFontSize(contentSize: application.preferredContentSizeCategory)
+    open func sizedFontFor(_ textStyle: TypesetterTextStyle, font: TypesetterFont) -> UIFont {
+        let size = TypesetterFontSize(contentSize: application.preferredContentSizeCategory.rawValue)
         let pointSize = sizeFor(size: size, textStyle: textStyle)
         
         return UIFont(descriptor: descriptorFor(textStyle, size: size, font: font), size: pointSize)
@@ -93,17 +93,17 @@ public class Typesetter {
         - textStyle: The text style as a string to return the `UIFont` instance for
         - font: The `TypesetterFont` to return the `UIFont` with.
     */
-    public func sizedFontFor(textStyle: String, font: TypesetterFont) -> UIFont {
+    open func sizedFontFor(_ textStyle: String, font: TypesetterFont) -> UIFont {
         let style = TypesetterTextStyle(rawValue: textStyle) ?? .Body
         
         return sizedFontFor(style, font: font)
     }
     
-    private func descriptorFor(textStyle: TypesetterTextStyle, size: TypesetterFontSize, font: TypesetterFont) -> UIFontDescriptor {
+    fileprivate func descriptorFor(_ textStyle: TypesetterTextStyle, size: TypesetterFontSize, font: TypesetterFont) -> UIFontDescriptor {
         return UIFontDescriptor(name: font.name, size: sizeFor(size: size, textStyle: textStyle))
     }
     
-    private func sizeFor(size size: TypesetterFontSize, textStyle: TypesetterTextStyle) -> CGFloat {
+    fileprivate func sizeFor(size: TypesetterFontSize, textStyle: TypesetterTextStyle) -> CGFloat {
         return matrix[textStyle]?[size] ?? configuration.defaultFontSize
     }
     

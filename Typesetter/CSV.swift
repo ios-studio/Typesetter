@@ -11,13 +11,13 @@ import Foundation
 class CSV {
     let headers: [String]
     let columns: [String: [String]]
-    private static let delimiter = NSCharacterSet(charactersInString: ",")
+    fileprivate static let delimiter = CharacterSet(charactersIn: ",")
     
-    private static func getColumns(headers: [String], lines: [String]) -> [String: [String]] {
+    fileprivate static func getColumns(_ headers: [String], lines: [String]) -> [String: [String]] {
         return Array(lines)[1..<lines.count].reduce([String: [String]]()) { columns, line in
             var newColumns = columns
-            let row = line.componentsSeparatedByCharactersInSet(NSCharacterSet(charactersInString: ","))
-            for (index, header) in headers.enumerate() {
+            let row = line.components(separatedBy: CharacterSet(charactersIn: ","))
+            for (index, header) in headers.enumerated() {
                 if columns[header] == nil {
                     newColumns[header] = [row[index]]
                 } else {
@@ -39,9 +39,9 @@ class CSV {
             return nil
         }
         
-        let newline = NSCharacterSet.newlineCharacterSet()
+        let newline = CharacterSet.newlines
         var lines: [String] = []
-        contents.stringByTrimmingCharactersInSet(newline).enumerateLines { line, stop in lines.append(line)
+        contents.trimmingCharacters(in: newline).enumerateLines { line, stop in lines.append(line)
         }
         
         guard lines.count > 1 else {
@@ -50,7 +50,7 @@ class CSV {
             return nil
         }
         
-        let headers = lines[0].componentsSeparatedByCharactersInSet(CSV.delimiter)
+        let headers = lines[0].components(separatedBy: CSV.delimiter)
         self.headers = headers
         self.columns = CSV.getColumns(headers, lines: lines)
     }
