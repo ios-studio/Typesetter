@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Typesetter"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "A thin wrapper around dynamic type. Size your fonts across all accessibility sizes together with your designer."
   s.homepage     = "https://github.com/ios-studio/Typesetter"
   s.license      = { :type => "MIT", :file => "LICENSE" }
