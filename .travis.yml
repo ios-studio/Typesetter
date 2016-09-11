@@ -41,7 +41,7 @@ env:
       - DESTINATION="OS=10.0,name=iPhone 6s"
       - DESTINATION="OS=10.0,name=iPhone 6 Plus"
       - DESTINATION="OS=10.0,name=iPhone 6s Plus"
-      - DESTINATION="OS=10.0,name=iPhone 6SE"
+      - DESTINATION="OS=10.0,name=iPhone SE"
       - DESTINATION="OS=10.0,name=iPhone 7"
       - DESTINATION="OS=10.0,name=iPhone 7 Plus"
 
