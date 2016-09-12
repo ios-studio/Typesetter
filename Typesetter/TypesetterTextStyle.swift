@@ -38,7 +38,7 @@ public enum TypesetterTextStyle: String {
      
      - Parameter textStyle: The UITextStyle to map.
     */
-    init(textStyle: String) {
+    init(textStyle: UIFontTextStyle) {
         if #available(iOS 9.0, *) {
             switch textStyle {
             case UIFontTextStyle.body:

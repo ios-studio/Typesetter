@@ -41,7 +41,7 @@ public enum TypesetterFontSize: String {
      Initialize the corresponding TypesetterFontSize for a UIContentSize.
      Parameter contentSize: The UIContentSize to wrap.
     */
-    init(contentSize: String) {
+    init(contentSize: UIContentSizeCategory) {
         switch contentSize {
         case UIContentSizeCategory.small:
             self = .Small

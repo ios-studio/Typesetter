@@ -6,21 +6,21 @@ import Nimble
 class TypesetterTextStyleTests: XCTestCase {
 
     func testStyleMapping() {
-        var mapping: [TypesetterTextStyle: String] = [
-            .Body: UIFontTextStyle.body,
-            .Caption1: UIFontTextStyle.caption1,
-            .Caption2: UIFontTextStyle.caption2,
-            .Footnote: UIFontTextStyle.footnote,
-            .Headline: UIFontTextStyle.headline,
-            .Subheadline: UIFontTextStyle.subheadline,
+        var mapping: [TypesetterTextStyle: UIFontTextStyle] = [
+            .Body: .body,
+            .Caption1: .caption1,
+            .Caption2: .caption2,
+            .Footnote: .footnote,
+            .Headline: .headline,
+            .Subheadline: .subheadline,
         ]
         
         if #available(iOS 9.0, *) {
-            let additionals: [TypesetterTextStyle: String] = [
-                .Callout: UIFontTextStyle.callout,
-                .Title1: UIFontTextStyle.title1,
-                .Title2: UIFontTextStyle.title2,
-                .Title3: UIFontTextStyle.title3
+            let additionals: [TypesetterTextStyle: UIFontTextStyle] = [
+                .Callout: .callout,
+                .Title1: .title1,
+                .Title2: .title2,
+                .Title3: .title3
             ]
             
             for (textStyle, textStyleString) in additionals {
@@ -33,7 +33,7 @@ class TypesetterTextStyleTests: XCTestCase {
             expect(TypesetterTextStyle(textStyle: inputFontTextStyleString)).to(equal(expectedFontTextStyle))
         }
         
-        expect(TypesetterTextStyle(textStyle: "Garbage")).to(equal(TypesetterTextStyle.Body))
+        expect(TypesetterTextStyle(textStyle: UIFontTextStyle(rawValue: "Garbage"))).to(equal(TypesetterTextStyle.Body))
     }
     
     func testStyleCount() {

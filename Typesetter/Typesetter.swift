@@ -80,7 +80,14 @@ open class Typesetter {
         - font: The `TypesetterFont` to return the `UIFont` with.
      */
     open func sizedFontFor(_ textStyle: TypesetterTextStyle, font: TypesetterFont) -> UIFont {
-        let size = TypesetterFontSize(contentSize: application.preferredContentSizeCategory.rawValue)
+       
+        var preferrredContentSize = UIContentSizeCategory.medium
+        
+        if UIApplication.shared.responds(to: #selector(getter: UIApplication.preferredContentSizeCategory)) {
+            preferrredContentSize = UIApplication.shared.preferredContentSizeCategory
+        }
+
+        let size = TypesetterFontSize(contentSize: preferrredContentSize)
         let pointSize = sizeFor(size: size, textStyle: textStyle)
         
         return UIFont(descriptor: descriptorFor(textStyle, size: size, font: font), size: pointSize)

@@ -6,19 +6,19 @@ import Nimble
 class TypesetterFontSizeTests: XCTestCase {
     
     func testSizeMapping() {
-        let mapping: [TypesetterFontSize: String] = [
-            .Small: UIContentSizeCategory.small,
-            .Medium: UIContentSizeCategory.medium,
-            .Large: UIContentSizeCategory.large,
-            .ExtraSmall: UIContentSizeCategory.extraSmall,
-            .ExtraLarge: UIContentSizeCategory.extraLarge,
-            .ExtraExtraLarge: UIContentSizeCategory.extraExtraLarge,
-            .ExtraExtraExtraLarge: UIContentSizeCategory.extraExtraExtraLarge,
-            .AccessibilityMedium: UIContentSizeCategory.accessibilityMedium,
-            .AccessibilityLarge: UIContentSizeCategory.accessibilityLarge,
-            .AccessibilityExtraLarge: UIContentSizeCategory.accessibilityExtraLarge,
-            .AccessibilityExtraExtraLarge: UIContentSizeCategory.accessibilityExtraExtraLarge,
-            .AccessibilityExtraExtraExtraLarge: UIContentSizeCategory.accessibilityExtraExtraExtraLarge
+        let mapping: [TypesetterFontSize: UIContentSizeCategory] = [
+            .Small: .small,
+            .Medium: .medium,
+            .Large: .large,
+            .ExtraSmall: .extraSmall,
+            .ExtraLarge: .extraLarge,
+            .ExtraExtraLarge: .extraExtraLarge,
+            .ExtraExtraExtraLarge: .extraExtraExtraLarge,
+            .AccessibilityMedium: .accessibilityMedium,
+            .AccessibilityLarge: .accessibilityLarge,
+            .AccessibilityExtraLarge: .accessibilityExtraLarge,
+            .AccessibilityExtraExtraLarge: .accessibilityExtraExtraLarge,
+            .AccessibilityExtraExtraExtraLarge: .accessibilityExtraExtraExtraLarge
         ]
         
         for (expectedFontSize, inputContentSize) in mapping {

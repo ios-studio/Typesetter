@@ -17,7 +17,7 @@ class TypesetterTextStyleFontSizeMatrixLoaderTests: XCTestCase {
     
     func testCache() {
         let testPath = copyCSVFixtureToTestPath(csvPath("FontSizes"))
-        TypesetterTextStyleFontSizeMatrixLoader(path: testPath).load()
+        _ = TypesetterTextStyleFontSizeMatrixLoader(path: testPath).load()
         removeCSVFixtureAtPath(testPath)
         
         let cacheLoader = TypesetterTextStyleFontSizeMatrixLoader(path: testPath)
