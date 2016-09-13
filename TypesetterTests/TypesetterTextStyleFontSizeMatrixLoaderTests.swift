@@ -5,10 +5,10 @@ import Nimble
 
 class TypesetterTextStyleFontSizeMatrixLoaderTests: XCTestCase {
     
-    var fileManager: NSFileManager!
+    var fileManager: FileManager!
     
     override func setUp() {
-        fileManager = NSFileManager.defaultManager()
+        fileManager = FileManager.default
     }
     
     override func tearDown() {
@@ -17,7 +17,7 @@ class TypesetterTextStyleFontSizeMatrixLoaderTests: XCTestCase {
     
     func testCache() {
         let testPath = copyCSVFixtureToTestPath(csvPath("FontSizes"))
-        TypesetterTextStyleFontSizeMatrixLoader(path: testPath).load()
+        _ = TypesetterTextStyleFontSizeMatrixLoader(path: testPath).load()
         removeCSVFixtureAtPath(testPath)
         
         let cacheLoader = TypesetterTextStyleFontSizeMatrixLoader(path: testPath)
@@ -32,10 +32,10 @@ class TypesetterTextStyleFontSizeMatrixLoaderTests: XCTestCase {
         expect(deletedResult).to(beNil())
     }
     
-    private func copyCSVFixtureToTestPath(path: String) -> String {
-        let newPath = path.stringByReplacingOccurrencesOfString("FontSizes", withString: "CorrectFontSizes-CacheTest")
+    fileprivate func copyCSVFixtureToTestPath(_ path: String) -> String {
+        let newPath = path.replacingOccurrences(of: "FontSizes", with: "CorrectFontSizes-CacheTest")
         do {
-            try fileManager.copyItemAtPath(path, toPath: newPath)
+            try fileManager.copyItem(atPath: path, toPath: newPath)
         } catch _ {
             fail("Could not copy file for cache test")
         }
@@ -43,9 +43,9 @@ class TypesetterTextStyleFontSizeMatrixLoaderTests: XCTestCase {
         return newPath
     }
     
-    private func removeCSVFixtureAtPath(path: String) {
+    fileprivate func removeCSVFixtureAtPath(_ path: String) {
         do {
-            try fileManager.removeItemAtPath(path)
+            try fileManager.removeItem(atPath: path)
         } catch _ {
             fail("Could not remove file for cache test")
         }
@@ -86,7 +86,7 @@ class TypesetterTextStyleFontSizeMatrixLoaderTests: XCTestCase {
         expect(sizeMatrix).to(beNil())
     }
     
-    private func csvPath(fileName: String) -> String {
-        return NSBundle(forClass: self.dynamicType).pathForResource(fileName, ofType: "csv") ?? ""
+    fileprivate func csvPath(_ fileName: String) -> String {
+        return Bundle(for: type(of: self)).path(forResource: fileName, ofType: "csv") ?? ""
     }
 }

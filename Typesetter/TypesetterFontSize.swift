@@ -29,82 +29,43 @@ public enum TypesetterFontSize: String {
     /** The largest font size reflecting the current accessibility settings. */
     case AccessibilityExtraExtraExtraLarge
     
+    static let allSizes = [ ExtraSmall, Small, Medium, Large, ExtraLarge, ExtraExtraLarge, ExtraExtraExtraLarge, AccessibilityMedium, AccessibilityLarge, AccessibilityExtraLarge, AccessibilityExtraExtraLarge, AccessibilityExtraExtraExtraLarge]
+    
     /**
      The number of typesetter font sizes available. Always returns 12.
     */
-    static var count: Int {
-        var count = 0
-
-        switch self.Small {
-        case .Small:
-            count += 1
-            fallthrough
-        case .Medium:
-            count += 1
-            fallthrough
-        case .Large:
-            count += 1
-            fallthrough
-        case .ExtraSmall:
-            count += 1
-            fallthrough
-        case .ExtraLarge:
-            count += 1
-            fallthrough
-        case .ExtraExtraLarge:
-            count += 1
-            fallthrough
-        case .ExtraExtraExtraLarge:
-            count += 1
-            fallthrough
-        case .AccessibilityMedium:
-            count += 1
-            fallthrough
-        case .AccessibilityLarge:
-            count += 1
-            fallthrough
-        case .AccessibilityExtraLarge:
-            count += 1
-            fallthrough
-        case .AccessibilityExtraExtraLarge:
-            count += 1
-            fallthrough
-        case .AccessibilityExtraExtraExtraLarge:
-            count += 1
-        }
-        
-        return count
-    }
+    
+    static let count = allSizes.count
     
     /**
      Initialize the corresponding TypesetterFontSize for a UIContentSize.
      Parameter contentSize: The UIContentSize to wrap.
     */
-    init(contentSize: String) {
+    init(contentSize: UIContentSizeCategory) {
         switch contentSize {
-        case UIContentSizeCategorySmall:
+        case UIContentSizeCategory.small:
             self = .Small
-        case UIContentSizeCategoryMedium:
+        case UIContentSizeCategory.medium:
             self = .Medium
-        case UIContentSizeCategoryLarge:
+        case UIContentSizeCategory.large:
             self = .Large
-        case UIContentSizeCategoryExtraSmall:
+        case UIContentSizeCategory.extraSmall:
             self = .ExtraSmall
-        case UIContentSizeCategoryExtraLarge:
+        case UIContentSizeCategory.extraLarge:
             self = .ExtraLarge
-        case UIContentSizeCategoryExtraExtraLarge:
+        case UIContentSizeCategory.extraExtraLarge:
             self = .ExtraExtraLarge
-        case UIContentSizeCategoryExtraExtraExtraLarge:
+        case UIContentSizeCategory.extraExtraExtraLarge:
             self = .ExtraExtraExtraLarge
-        case UIContentSizeCategoryAccessibilityMedium:
+        case UIContentSizeCategory.accessibilityMedium:
             self = .AccessibilityMedium
-        case UIContentSizeCategoryAccessibilityLarge:
+        case UIContentSizeCategory.accessibilityLarge:
             self = .AccessibilityLarge
-        case UIContentSizeCategoryAccessibilityExtraLarge:
+        case UIContentSizeCategory.accessibilityExtraLarge:
             self = .AccessibilityExtraLarge
-        case UIContentSizeCategoryAccessibilityExtraExtraLarge:
+        case UIContentSizeCategory.accessibilityExtraExtraLarge:
             self = .AccessibilityExtraExtraLarge
-        case UIContentSizeCategoryAccessibilityExtraExtraExtraLarge:
+        case UIContentSizeCategory.accessibilityExtraExtraExtraLarge:
             self = .AccessibilityExtraExtraExtraLarge
         default:
             self = .Medium

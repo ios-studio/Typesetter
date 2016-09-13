@@ -14,7 +14,7 @@ public struct TypesetterConfiguration {
      */
     public let defaultFontSize: CGFloat
     
-    private let defaultDefaultFontSize: CGFloat = 12.0
+    fileprivate let defaultDefaultFontSize: CGFloat = 12.0
 
     /**
      Initialize a new `TypesetterConfiguration` with a custom path to a definition file.
