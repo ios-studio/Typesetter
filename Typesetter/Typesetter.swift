@@ -82,7 +82,7 @@ open class Typesetter {
     open func sizedFontFor(_ textStyle: TypesetterTextStyle, font: TypesetterFont) -> UIFont {
         var preferredContentSize = UIContentSizeCategory.medium
         
-        if UIApplication.shared.responds(to: #selector(getter: UIApplication.preferredContentSizeCategory)) {
+        if UIApplication.shared != nil {
             preferredContentSize = UIApplication.shared.preferredContentSizeCategory
         }
         
