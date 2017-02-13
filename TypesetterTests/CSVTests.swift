@@ -30,8 +30,8 @@ class CSVTests: XCTestCase {
         expect(parsed).to(beNil())
     }
     
-    private func csvPath(fileName: String) -> String {
-        return NSBundle(forClass: self.dynamicType).pathForResource(fileName, ofType: "csv") ?? ""
+    fileprivate func csvPath(_ fileName: String) -> String {
+        return Bundle(for: type(of: self)).path(forResource: fileName, ofType: "csv") ?? ""
     }
 
 }

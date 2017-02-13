@@ -6,31 +6,31 @@ import Nimble
 class TypesetterTextStyleTests: XCTestCase {
 
     func testStyleMapping() {
-        var mapping: [TypesetterTextStyle: String] = [
-            .Body: UIFontTextStyleBody,
-            .Caption1: UIFontTextStyleCaption1,
-            .Caption2: UIFontTextStyleCaption2,
-            .Footnote: UIFontTextStyleFootnote,
-            .Headline: UIFontTextStyleHeadline,
-            .Subheadline: UIFontTextStyleSubheadline,
+        var mapping: [TypesetterTextStyle: UIFontTextStyle] = [
+            .Body: UIFontTextStyle.body,
+            .Caption1: UIFontTextStyle.caption1,
+            .Caption2: UIFontTextStyle.caption2,
+            .Footnote: UIFontTextStyle.footnote,
+            .Headline: UIFontTextStyle.headline,
+            .Subheadline: UIFontTextStyle.subheadline,
         ]
         
         if #available(iOS 9.0, *) {
-            let additionals: [TypesetterTextStyle: String] = [
-                .Callout: UIFontTextStyleCallout,
-                .Title1: UIFontTextStyleTitle1,
-                .Title2: UIFontTextStyleTitle2,
-                .Title3: UIFontTextStyleTitle3
+            let additionals: [TypesetterTextStyle: UIFontTextStyle] = [
+                .Callout: UIFontTextStyle.callout,
+                .Title1: UIFontTextStyle.title1,
+                .Title2: UIFontTextStyle.title2,
+                .Title3: UIFontTextStyle.title3
             ]
             
-            for (textStyle, textStyleString) in additionals {
-                mapping[textStyle] = textStyleString
+            for (textStyle, uiTextStyle) in additionals {
+                mapping[textStyle] = uiTextStyle
             }
         }
         
         
-        for (expectedFontTextStyle, inputFontTextStyleString) in mapping {
-            expect(TypesetterTextStyle(textStyle: inputFontTextStyleString)).to(equal(expectedFontTextStyle))
+        for (expectedFontTextStyle, inputFontTextStyle) in mapping {
+            expect(TypesetterTextStyle(textStyle: inputFontTextStyle.rawValue)).to(equal(expectedFontTextStyle))
         }
         
         expect(TypesetterTextStyle(textStyle: "Garbage")).to(equal(TypesetterTextStyle.Body))

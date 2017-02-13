@@ -2,7 +2,7 @@ import UIKit
 
 internal class TypesetterTextStyleFontSizeMatrixLoader {
     
-    private static var cachedPaths: [String: Typesetter.TextStyleFontSizeMatrix] = [:]
+    fileprivate static var cachedPaths: [String: Typesetter.TextStyleFontSizeMatrix] = [:]
     
     let path: String
     
@@ -11,13 +11,13 @@ internal class TypesetterTextStyleFontSizeMatrixLoader {
     }
     
     func clear() {
-        TypesetterTextStyleFontSizeMatrixLoader.cachedPaths.removeValueForKey(path)
+        TypesetterTextStyleFontSizeMatrixLoader.cachedPaths.removeValue(forKey: path)
     }
     
     func load() -> Typesetter.TextStyleFontSizeMatrix? {
         if let cached = TypesetterTextStyleFontSizeMatrixLoader.cachedPaths[path] { return cached }
         
-        guard let csv = loadCSV(path) where !csv.headers.isEmpty else {
+        guard let csv = loadCSV(path), !csv.headers.isEmpty else {
             logReadFailure("Could not find or read font sizes csv")
             return nil
         }
@@ -36,14 +36,14 @@ internal class TypesetterTextStyleFontSizeMatrixLoader {
         return nil
     }
     
-    private func loadMatrix(csv: CSV, styleNames: ArraySlice<String>, sizeNames: [String]) -> Typesetter.TextStyleFontSizeMatrix? {
+    fileprivate func loadMatrix(_ csv: CSV, styleNames: ArraySlice<String>, sizeNames: [String]) -> Typesetter.TextStyleFontSizeMatrix? {
         var matrix = Typesetter.TextStyleFontSizeMatrix()
         for styleName in styleNames {
-            for (index, sizeName) in sizeNames.enumerate() {
+            for (index, sizeName) in sizeNames.enumerated() {
                 guard let style = TypesetterTextStyle(rawValue: styleName),
-                    size = TypesetterFontSize(rawValue: sizeName),
-                    values = csv.columns[styleName],
-                    fontSize = Float(values[index])
+                    let size = TypesetterFontSize(rawValue: sizeName),
+                    let values = csv.columns[styleName],
+                    let fontSize = Float(values[index])
                     else {
                         logReadFailure("Font sizes csv is corrupt at \(styleName) \(sizeName)")
                         return nil
@@ -62,11 +62,11 @@ internal class TypesetterTextStyleFontSizeMatrixLoader {
         return matrix
     }
     
-    private func loadCSV(path: String) -> CSV? {
+    fileprivate func loadCSV(_ path: String) -> CSV? {
         return CSV(contentsOfFile: path)
     }
     
-    private func logReadFailure(message: String) {
+    fileprivate func logReadFailure(_ message: String) {
         NSLog("Typesetter: \(message) - will default to same font size for all fonts")
     }
 }

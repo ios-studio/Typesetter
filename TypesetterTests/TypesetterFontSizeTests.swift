@@ -6,23 +6,23 @@ import Nimble
 class TypesetterFontSizeTests: XCTestCase {
     
     func testSizeMapping() {
-        let mapping: [TypesetterFontSize: String] = [
-            .Small: UIContentSizeCategorySmall,
-            .Medium: UIContentSizeCategoryMedium,
-            .Large: UIContentSizeCategoryLarge,
-            .ExtraSmall: UIContentSizeCategoryExtraSmall,
-            .ExtraLarge: UIContentSizeCategoryExtraLarge,
-            .ExtraExtraLarge: UIContentSizeCategoryExtraExtraLarge,
-            .ExtraExtraExtraLarge: UIContentSizeCategoryExtraExtraExtraLarge,
-            .AccessibilityMedium: UIContentSizeCategoryAccessibilityMedium,
-            .AccessibilityLarge: UIContentSizeCategoryAccessibilityLarge,
-            .AccessibilityExtraLarge: UIContentSizeCategoryAccessibilityExtraLarge,
-            .AccessibilityExtraExtraLarge: UIContentSizeCategoryAccessibilityExtraExtraLarge,
-            .AccessibilityExtraExtraExtraLarge: UIContentSizeCategoryAccessibilityExtraExtraExtraLarge
+        let mapping: [TypesetterFontSize: UIContentSizeCategory] = [
+            .Small: UIContentSizeCategory.small,
+            .Medium: UIContentSizeCategory.medium,
+            .Large: UIContentSizeCategory.large,
+            .ExtraSmall: UIContentSizeCategory.extraSmall,
+            .ExtraLarge: UIContentSizeCategory.extraLarge,
+            .ExtraExtraLarge: UIContentSizeCategory.extraExtraLarge,
+            .ExtraExtraExtraLarge: UIContentSizeCategory.extraExtraExtraLarge,
+            .AccessibilityMedium: UIContentSizeCategory.accessibilityMedium,
+            .AccessibilityLarge: UIContentSizeCategory.accessibilityLarge,
+            .AccessibilityExtraLarge: UIContentSizeCategory.accessibilityExtraLarge,
+            .AccessibilityExtraExtraLarge: UIContentSizeCategory.accessibilityExtraExtraLarge,
+            .AccessibilityExtraExtraExtraLarge: UIContentSizeCategory.accessibilityExtraExtraExtraLarge
         ]
         
         for (expectedFontSize, inputContentSize) in mapping {
-            expect(TypesetterFontSize(contentSize: inputContentSize)).to(equal(expectedFontSize))
+            expect(TypesetterFontSize(contentSize: inputContentSize.rawValue)).to(equal(expectedFontSize))
         }
     }
     

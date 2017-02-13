@@ -29,7 +29,7 @@ class TypesetterTests: XCTestCase {
         
         continueAfterFailure = false
         
-        guard let csvPath = NSBundle(forClass: self.dynamicType).pathForResource("FontSizes", ofType: "csv") else {
+        guard let csvPath = Bundle(for: type(of: self)).path(forResource: "FontSizes", ofType: "csv") else {
             fail("Font fixture file TypesetterFontSizes.csv is missing")
             return
         }
@@ -45,25 +45,25 @@ class TypesetterTests: XCTestCase {
     }
     
     func testConvenienceInit() {
-        let convenienceTypesetter = Typesetter(bundle: NSBundle(forClass: self.dynamicType))
+        let convenienceTypesetter = Typesetter(bundle: Bundle(for: type(of: self)))
         expect(convenienceTypesetter.hasSizes).to(beTrue())
     }
     
     func testConvenienceInitWithNoPath() {
-        let convenienceTypesetter = Typesetter(bundle: NSBundle())
+        let convenienceTypesetter = Typesetter(bundle: Bundle())
         expect(convenienceTypesetter.hasSizes).to(beFalse())
     }
     
     func testFontForWithoutSizes() {
-        typesetter = Typesetter(bundle: NSBundle())
+        typesetter = Typesetter(bundle: Bundle())
         let font = typesetter.sizedFontFor(.Body, font: Font.Bold)
         expect(font.pointSize).to(equal(12.0))
     }
     
     func testConvenienceInitPerformance() {
-        self.measureBlock {
+        self.measure {
             for _ in 1..<10000 {
-                let _ = Typesetter(bundle: NSBundle(forClass: self.dynamicType))
+                let _ = Typesetter(bundle: Bundle(for: type(of: self)))
             }
         }
     }
