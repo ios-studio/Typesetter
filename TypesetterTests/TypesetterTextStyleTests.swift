@@ -6,21 +6,21 @@ import Nimble
 class TypesetterTextStyleTests: XCTestCase {
 
     func testStyleMapping() {
-        var mapping: [TypesetterTextStyle: UIFontTextStyle] = [
-            .Body: UIFontTextStyle.body,
-            .Caption1: UIFontTextStyle.caption1,
-            .Caption2: UIFontTextStyle.caption2,
-            .Footnote: UIFontTextStyle.footnote,
-            .Headline: UIFontTextStyle.headline,
-            .Subheadline: UIFontTextStyle.subheadline,
+        var mapping: [TypesetterTextStyle: UIFont.TextStyle] = [
+            .Body: UIFont.TextStyle.body,
+            .Caption1: UIFont.TextStyle.caption1,
+            .Caption2: UIFont.TextStyle.caption2,
+            .Footnote: UIFont.TextStyle.footnote,
+            .Headline: UIFont.TextStyle.headline,
+            .Subheadline: UIFont.TextStyle.subheadline,
         ]
         
         if #available(iOS 9.0, *) {
-            let additionals: [TypesetterTextStyle: UIFontTextStyle] = [
-                .Callout: UIFontTextStyle.callout,
-                .Title1: UIFontTextStyle.title1,
-                .Title2: UIFontTextStyle.title2,
-                .Title3: UIFontTextStyle.title3
+            let additionals: [TypesetterTextStyle: UIFont.TextStyle] = [
+                .Callout: UIFont.TextStyle.callout,
+                .Title1: UIFont.TextStyle.title1,
+                .Title2: UIFont.TextStyle.title2,
+                .Title3: UIFont.TextStyle.title3
             ]
             
             for (textStyle, uiTextStyle) in additionals {

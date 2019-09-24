@@ -9,6 +9,10 @@ This library puts you back in control by reading the sizes from a CSV file which
 #### Via [Carthage](https://github.com/Carthage/Carthage):
 Add the following your Cartfile:
 
+For Swift 5:
+```Swift
+github "ios-studio/Typesetter" ~> 1.1.0
+```
 For Swift 3:
 ```Swift
 github "ios-studio/Typesetter" ~> 1.0.0
@@ -21,6 +25,11 @@ github "ios-studio/Typesetter" ~> 0.1.3
 
 #### Via [CocoaPods](https://cocoapods.org/):
 Add the following your Podfile:
+
+For Swift 5:
+```ruby
+pod "Typesetter", "~> 1.1.0"
+```
 
 For Swift 3:
 ```ruby
