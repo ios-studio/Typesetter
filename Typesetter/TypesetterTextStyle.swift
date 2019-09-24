@@ -72,43 +72,43 @@ public enum TypesetterTextStyle: String {
     */
     init(textStyle: String) {
         if #available(iOS 9.0, *) {
-            switch UIFontTextStyle(rawValue: textStyle) {
-            case UIFontTextStyle.body:
+            switch UIFont.TextStyle(rawValue: textStyle) {
+            case UIFont.TextStyle.body:
                 self = .Body
-            case UIFontTextStyle.caption1:
+            case UIFont.TextStyle.caption1:
                 self = .Caption1
-            case UIFontTextStyle.caption2:
+            case UIFont.TextStyle.caption2:
                 self = .Caption2
-            case UIFontTextStyle.footnote:
+            case UIFont.TextStyle.footnote:
                 self = .Footnote
-            case UIFontTextStyle.headline:
+            case UIFont.TextStyle.headline:
                 self = .Headline
-            case UIFontTextStyle.subheadline:
+            case UIFont.TextStyle.subheadline:
                 self = .Subheadline
-            case UIFontTextStyle.callout:
+            case UIFont.TextStyle.callout:
                 self = .Callout
-            case UIFontTextStyle.title1:
+            case UIFont.TextStyle.title1:
                 self = .Title1
-            case UIFontTextStyle.title2:
+            case UIFont.TextStyle.title2:
                 self = .Title2
-            case UIFontTextStyle.title3:
+            case UIFont.TextStyle.title3:
                 self = .Title3
             default:
                 self = .Body
             }
         } else {
-            switch UIFontTextStyle(rawValue: textStyle) {
-            case UIFontTextStyle.body:
+            switch UIFont.TextStyle(rawValue: textStyle) {
+            case UIFont.TextStyle.body:
                 self = .Body
-            case UIFontTextStyle.caption1:
+            case UIFont.TextStyle.caption1:
                 self = .Caption1
-            case UIFontTextStyle.caption2:
+            case UIFont.TextStyle.caption2:
                 self = .Caption2
-            case UIFontTextStyle.footnote:
+            case UIFont.TextStyle.footnote:
                 self = .Footnote
-            case UIFontTextStyle.headline:
+            case UIFont.TextStyle.headline:
                 self = .Headline
-            case UIFontTextStyle.subheadline:
+            case UIFont.TextStyle.subheadline:
                 self = .Subheadline
             default:
                 self = .Body
